@@ -1,11 +1,35 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity,ScrollView } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
 import Home from "./Home";
 
-const Products = (props) => {
+const Products = () => {
   return(
     <View style={styles.container}>
+      <View style={{ flex: 1 }}>
+        <Carousel
+          loop
+          width={width}
+          height={width/2}
+          autoPlay={true}
+          data={[props.Banner]}
+          scrollAnimationDuration={1000}
+          onSnapToItem={(index) => console.log('current index:', index)}
+          renderItem={({ index }) => (
+             <View
+              style={{
+                flex: 1,
+                borderWidth: 1,
+                justifyContent:'center',
+               }}
+              >
+            <Text style={{ textAlign:'center',fontSize: 30 }}>
+              {index}
+            </Text>
+            </View>
+            )}
+        /> 
+      </View>
       <Image style={styles.imageStyle} source={{ uri: props.images }}/>
       <View style={styles.bodyContainer}>
         <Text style={styles.titleStyle}>{props.title}</Text>
@@ -46,7 +70,6 @@ const styles = StyleSheet.create({
     minHeight: 100,
     backgroundColor: "white",
   },
-
   TouchableStyle: {
     marginTop: 20,
     backgroundColor: "#F2921D",
