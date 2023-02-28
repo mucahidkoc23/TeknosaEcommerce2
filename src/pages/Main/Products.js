@@ -3,7 +3,8 @@ import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity,ScrollView 
 import Carousel from "react-native-reanimated-carousel";
 import Home from "./Home";
 
-const Products = () => {
+const Products = (props) => {
+  const width = Dimensions.get('window').width;
   return(
     <View style={styles.container}>
       <View style={{ flex: 1 }}>
