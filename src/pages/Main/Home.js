@@ -13,12 +13,11 @@ const Home = ({navigation}) => {
     let array = [];
     for(let i=0; i<=5; i++)
     {
-      array.push(product.image[i]);
+      array.push(data.product.image[i]);
     }
   }
   const Handle = (id) =>{
-   navigation.navigate(dispatch({type:"ADD_CART", payload:product}) /*,{id}*/ );
-   
+   navigation.navigate(dispatch({type:"ADD_CART", payload:product}) /*,{id}*/ ); 
   }
 useEffect(() =>{
   fetchData();

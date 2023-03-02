@@ -6,6 +6,7 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
 import Login from "./Login/Login";
 import Home from "./Main/Home";
 import Cart from "./Main/Cart";
+import AsyncStorageUse from "./AsyncStorage/AsyncStorageUse";
 import Onboarding from "./Onboarding/Onboarding";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Provider from "../Redux/Provider";
@@ -33,7 +34,7 @@ const Router = () =>{
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Onboarding" component={Onboarding} options={{headerShown:false}}/>
-          <Stack.Screen name="Login" component={Login}/> 
+          <Stack.Screen name="Login" component={Login}/>
           <Stack.Screen name="MainScreen" component={Main} /> 
         </Stack.Navigator>
       </NavigationContainer> 
