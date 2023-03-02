@@ -4,33 +4,9 @@ import Carousel from "react-native-reanimated-carousel";
 import Home from "./Home";
 
 const Products = (props) => {
-  const width = Dimensions.get('window').width;
   return(
-    <View style={styles.container}>
-      <View style={{ flex: 1 }}>
-        <Carousel
-          loop
-          width={width}
-          height={width/2}
-          autoPlay={true}
-          data={[props.Banner]}
-          scrollAnimationDuration={1000}
-          onSnapToItem={(index) => console.log('current index:', index)}
-          renderItem={({ index }) => (
-             <View
-              style={{
-                flex: 1,
-                borderWidth: 1,
-                justifyContent:'center',
-               }}
-              >
-            <Text style={{ textAlign:'center',fontSize: 30 }}>
-              {index}
-            </Text>
-            </View>
-            )}
-        /> 
-      </View>
+    <View>
+    <View style={styles.container}>     
       <Image style={styles.imageStyle} source={{ uri: props.images }}/>
       <View style={styles.bodyContainer}>
         <Text style={styles.titleStyle}>{props.title}</Text>
@@ -42,6 +18,7 @@ const Products = (props) => {
         </TouchableOpacity>
       </View>  
     </View>
+    </View>
   );
 };
 export default Products;
@@ -51,9 +28,9 @@ const styles = StyleSheet.create({
     margin: 5,
     marginRight: 5,
     flexDirection: "row",
+    flex:1,
   },
   bodyContainer: {
-    flex: 1,
     padding: 5,
   },
   titleStyle: {
@@ -70,6 +47,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     minHeight: 100,
     backgroundColor: "white",
+    flex:1,
   },
   TouchableStyle: {
     marginTop: 20,

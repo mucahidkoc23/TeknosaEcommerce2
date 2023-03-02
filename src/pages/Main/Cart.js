@@ -1,14 +1,18 @@
 import React from "react";
 import { Text ,View,StyleSheet,FlatList} from "react-native";
-//import {useSelector} from "react-redux";
+import {useSelector} from "react-redux";
+import Products from "./Products";
 
 const Cart = () => { 
- //const selector = useSelector(s =>s.productsList)
+ const selector = useSelector(s =>s.productsList)
   return(
     <View style={styles.container}>
-      {/* <FlatList 
-        data={selector}
-        renderItem={({item})=>{<Text>{item}</Text>}}/> */}
+      {selector.map(item => (
+        <View key={item.id}>
+          <Text>{item.title}</Text>
+          <Text>{item.price}</Text>
+        </View>
+      ))}
     </View>
   );
 };

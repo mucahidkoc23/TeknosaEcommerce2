@@ -8,7 +8,7 @@ import Home from "./Main/Home";
 import Cart from "./Main/Cart";
 import Onboarding from "./Onboarding/Onboarding";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-//import Provider from "../Redux/Provider";
+import Provider from "../Redux/Provider";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -29,7 +29,7 @@ const Main = () => {
 };
 const Router = () =>{
   return(
-   //<Provider>
+   <Provider>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Onboarding" component={Onboarding} options={{headerShown:false}}/>
@@ -37,7 +37,7 @@ const Router = () =>{
           <Stack.Screen name="MainScreen" component={Main} /> 
         </Stack.Navigator>
       </NavigationContainer> 
-    //</Provider>
+    </Provider>
   );
 };
 export default Router;
